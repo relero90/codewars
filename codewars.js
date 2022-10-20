@@ -1,3 +1,22 @@
+// Define a function that takes an integer argument and returns a logical value true or false depending on if the integer is a prime.
+// num can be a positive or negative integer
+function isPrime(num) {
+  if (num <= 1) {
+    return false;
+  } else if (num === 2 || num === 3) {
+    return true;
+  } else if (num % 2 === 0 || num % 3 === 0) {
+    return false;
+  }
+
+  for (var i = 5; i <= Math.sqrt(num); i = i + 6) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
 // Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
 function pigIt(str) {
   let words = str.split(" ");
@@ -14,7 +33,7 @@ function pigIt(str) {
   }
   return pigWords.join(" ");
 }
-console.log(pigIt("Pig latin is cool !"));
+
 // ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
 // If the function is passed a valid PIN string, return true, else return false.
 function validatePIN(pin) {
