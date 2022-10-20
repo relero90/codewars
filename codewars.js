@@ -1,3 +1,20 @@
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+function pigIt(str) {
+  let words = str.split(" ");
+  let pigWords = [];
+  for (word of words) {
+    if (/^([\.,?!]{1})$/.test(word)) {
+      pigWords.push(word);
+    } else {
+      let newWord = word.slice(1);
+      newWord += word[0];
+      newWord += "ay";
+      pigWords.push(newWord);
+    }
+  }
+  return pigWords.join(" ");
+}
+console.log(pigIt("Pig latin is cool !"));
 // ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
 // If the function is passed a valid PIN string, return true, else return false.
 function validatePIN(pin) {
