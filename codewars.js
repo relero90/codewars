@@ -1,3 +1,42 @@
+// Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
+function humanReadable(seconds) {
+  let hrs = seconds / 60 / 60;
+  seconds = seconds - Math.floor(hrs) * 3600;
+
+  let hours = "";
+  if (hrs < 1) {
+    hours = "00";
+  } else if (hrs < 10) {
+    hours = `0${Math.floor(hrs)}`;
+  } else {
+    hours = `${Math.floor(hrs)}`;
+  }
+
+  let mins = seconds / 60;
+  seconds = seconds - Math.floor(mins) * 60;
+
+  let minutes = "";
+  if (mins < 1) {
+    minutes = "00";
+  } else if (mins < 10) {
+    minutes = `0${Math.floor(mins)}`;
+  } else {
+    minutes = `${Math.floor(mins)}`;
+  }
+
+  let secs = "";
+  if (seconds < 1) {
+    secs = "00";
+  } else if (seconds < 10) {
+    secs = `0${Math.floor(seconds)}`;
+  } else {
+    secs = `${Math.floor(seconds)}`;
+  }
+
+  return `${hours}:${minutes}:${secs}`;
+}
+console.log(humanReadable(7820)); // expect '00:59:59'
+
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
 function duplicateCount(text) {
   let ref = text.toLowerCase().split("");
