@@ -1,3 +1,38 @@
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+function duplicateCount(text) {
+  let ref = text.toLowerCase().split("");
+  let bank = [...new Set(ref)];
+
+  let counter = 0;
+  // for each character in the text string
+  for (character of bank) {
+    console.log(`Character = ${character}`);
+    // compare back to each letter of the text string
+    let freq = 0;
+    for (letter of ref) {
+      console.log(`Letter = ${letter}`);
+      // if the current letter matches the one we're comparing to, freq+1
+      if (character === letter) {
+        freq++;
+        console.log(`Freq = ${freq}`);
+      }
+    }
+    // if the letter occurred more than once in the string, counter+1
+    if (freq > 1) {
+      counter++;
+      console.log(`Counter = ${counter}`);
+    }
+  }
+  return counter;
+}
+console.log(duplicateCount("abAcsqB")); //expect return of 1
+
+// function duplicateCount(text) {
+//   text = text.toLowerCase();
+//   console.log(text);
+
+// }
+
 // Define a function that takes an integer argument and returns a logical value true or false depending on if the integer is a prime.
 // num can be a positive or negative integer
 function isPrime(num) {
