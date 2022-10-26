@@ -1,3 +1,44 @@
+// Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+// For example, a tower with 3 floors looks like this:
+// [
+//   "  *  ",
+//   " *** ",
+//   "*****"
+// ]
+function towerBuilder(nFloors) {
+  let strLength = nFloors === 1 ? 1 : 1 + (nFloors - 1) * 2;
+  let centerIndex = nFloors - 1;
+
+  let tower = [];
+  let floor = "*";
+
+  if (strLength === 1) {
+    tower.push(floor);
+    return tower;
+  }
+  if (strLength > 1) {
+    console.log(`Floor length: ${floor.length}`);
+    console.log(`String length: ${strLength}`);
+    while (floor.length < strLength) {
+      floor = " " + floor + " ";
+      console.log(`updated floor: ${floor}`);
+    }
+    tower.push(floor);
+
+    let i = 1;
+    let arr = [];
+    while (arr[0] !== "*") {
+      arr = floor.split("");
+      arr.splice(centerIndex + i, 1, "*");
+      arr.splice(centerIndex - i, 1, "*");
+      floor = arr.join("");
+      tower.push(floor);
+      i++;
+    }
+    return tower;
+  }
+}
+console.log(towerBuilder(3));
 // Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
 function humanReadable(seconds) {
   let hrs = seconds / 60 / 60;
