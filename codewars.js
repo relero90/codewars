@@ -3,14 +3,13 @@ let values = [0, 1, 1];
 function fibonacci(n) {
   console.log(`values[n] --> ${values[n]}`);
   if (typeof values[n] === "number") {
-    console.log("Value exists in cache!");
+    // Value already exists in the cache array
     return values[n];
   } else {
-    console.log("Adding value to cache...");
+    // Add value to the cache array
     values[n] = fibonacci(n - 1) + fibonacci(n - 2);
     return values[n];
   }
-  // return "confusion";
 }
 console.log(fibonacci(15));
 
