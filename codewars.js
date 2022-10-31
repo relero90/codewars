@@ -1,3 +1,18 @@
+// Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+// Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+String.prototype.toJadenCase = function (string) {
+  let inputWords = this.split(" ");
+  let updatedWords = [];
+
+  for (word of inputWords) {
+    let jadenCasedWord = word.charAt(0).toUpperCase() + word.slice(1);
+    updatedWords.push(jadenCasedWord);
+  }
+  return updatedWords.join(" ");
+};
+const startStr = "something to jadencase";
+console.log(startStr.toJadenCase());
+
 // Refactor the function into a recursive Fibonacci function that using a memoized data structure avoids the deficiencies of tree recursion. Can you make it so the memoization cache is private to this function?
 let values = [0, 1, 1];
 function fibonacci(n) {
@@ -11,7 +26,6 @@ function fibonacci(n) {
     return values[n];
   }
 }
-console.log(fibonacci(15));
 
 // Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
 // For example, a tower with 3 floors looks like this:
