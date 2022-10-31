@@ -1,3 +1,9 @@
+// Refactor the function into a recursive Fibonacci function that using a memoized data structure avoids the deficiencies of tree recursion. Can you make it so the memoization cache is private to this function?
+function fibonacci(n) {
+  if (n < 2) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 // Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
 // For example, a tower with 3 floors looks like this:
 // [
@@ -38,7 +44,7 @@ function towerBuilder(nFloors) {
     return tower;
   }
 }
-console.log(towerBuilder(3));
+
 // Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
 function humanReadable(seconds) {
   let hrs = seconds / 60 / 60;
