@@ -1,14 +1,22 @@
 // Refactor the function into a recursive Fibonacci function that using a memoized data structure avoids the deficiencies of tree recursion. Can you make it so the memoization cache is private to this function?
+// function fibonacci(n) {
+//   let values = [];
+//   if (n < 2) {
+//     values[n] = n;
+//     return values[n];
+//   }
+//   values[n] = fibonacci(n - 1) + fibonacci(n - 2);
+//   return values[n];
+// }
+let values = [0, 1, 1];
 function fibonacci(n) {
-  let values = [];
-  if (n < 2) {
-    values[n] = n;
+  if (values[n]) {
     return values[n];
   }
   values[n] = fibonacci(n - 1) + fibonacci(n - 2);
   return values[n];
 }
-console.log(fibonacci(5));
+console.log(fibonacci(15));
 
 // Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
 // For example, a tower with 3 floors looks like this:
