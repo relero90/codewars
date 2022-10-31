@@ -1,20 +1,16 @@
 // Refactor the function into a recursive Fibonacci function that using a memoized data structure avoids the deficiencies of tree recursion. Can you make it so the memoization cache is private to this function?
-// function fibonacci(n) {
-//   let values = [];
-//   if (n < 2) {
-//     values[n] = n;
-//     return values[n];
-//   }
-//   values[n] = fibonacci(n - 1) + fibonacci(n - 2);
-//   return values[n];
-// }
-let values = [0, 1, 1];
 function fibonacci(n) {
-  if (values[n]) {
+  let values = [0, 1, 1];
+  console.log(`values[n] --> ${values[n]}`);
+  if (typeof values[n] === "number") {
+    console.log("Value exists in cache!");
+    return values[n];
+  } else {
+    console.log("Adding value to cache...");
+    values[n] = fibonacci(n - 1) + fibonacci(n - 2);
     return values[n];
   }
-  values[n] = fibonacci(n - 1) + fibonacci(n - 2);
-  return values[n];
+  // return "confusion";
 }
 console.log(fibonacci(15));
 
