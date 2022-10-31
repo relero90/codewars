@@ -1,17 +1,10 @@
 // Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
 // Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
 String.prototype.toJadenCase = function (string) {
-  let inputWords = this.split(" ");
-  let updatedWords = [];
-
-  for (word of inputWords) {
-    let jadenCasedWord = word.charAt(0).toUpperCase() + word.slice(1);
-    updatedWords.push(jadenCasedWord);
-  }
-  return updatedWords.join(" ");
+  return this.split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 };
-const startStr = "something to jadencase";
-console.log(startStr.toJadenCase());
 
 // Refactor the function into a recursive Fibonacci function that using a memoized data structure avoids the deficiencies of tree recursion. Can you make it so the memoization cache is private to this function?
 let values = [0, 1, 1];
