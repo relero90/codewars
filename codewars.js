@@ -1,3 +1,13 @@
+// Complete the square sum function so that it squares each number passed into it and then sums the results together.
+function squareSum(numbers) {
+  let sum = 0;
+  let squares = numbers.map((num) => num * num);
+  for (number of squares) {
+    sum += number;
+  }
+  return sum;
+}
+
 // Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
 function longest(s1, s2) {
   // your code
@@ -6,9 +16,6 @@ function longest(s1, s2) {
   let filtered = [...new Set(lettersArray)];
   return filtered.join("");
 }
-let a = "xyaabbbccccdefww";
-let b = "xxxxyyyyabklmopq";
-console.log(longest(a, b)); //should return "abcdefklmopqwxy"
 
 // Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
 // Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
