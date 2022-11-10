@@ -7,23 +7,19 @@ function likes(names) {
   switch (names.length) {
     case 0:
       return `no one likes this`;
-      break;
     case 1:
       return `${names[0]} likes this`;
-      break;
     case 2:
       return `${names[0]} and ${names[1]} like this`;
-      break;
     case 3:
-      return `${names[0]}, ${names[1]}, and ${names[2]} like this`;
-      break;
+      return `${names[0]}, ${names[1]} and ${names[2]} like this`;
     default:
-      return `${names[0]} and ${names[1]} and ${
+      return `${names[0]}, ${names[1]} and ${
         names.length - 2
       } others like this`;
-      break;
   }
 }
+console.log(likes([]));
 
 // Complete the square sum function so that it squares each number passed into it and then sums the results together.
 function squareSum(numbers) {
