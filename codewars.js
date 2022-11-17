@@ -1,3 +1,19 @@
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+function XO(str) {
+  let string = str.toLowerCase();
+  let xCount = 0;
+  let oCount = 0;
+  for (char of string) {
+    if (char === "x") {
+      xCount++;
+    }
+    if (char === "o") {
+      oCount++;
+    }
+  }
+  return xCount === oCount ? true : false;
+}
+
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 function evenOrOdd(number) {
   if (number % 2 === 0) {
@@ -6,8 +22,6 @@ function evenOrOdd(number) {
     return "Odd";
   }
 }
-console.log(evenOrOdd(12));
-console.log(evenOrOdd(13));
 
 // []                                -->  "no one likes this"
 // ["Peter"]                         -->  "Peter likes this"
