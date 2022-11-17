@@ -1,3 +1,14 @@
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+function evenOrOdd(number) {
+  if (number % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
+console.log(evenOrOdd(12));
+console.log(evenOrOdd(13));
+
 // []                                -->  "no one likes this"
 // ["Peter"]                         -->  "Peter likes this"
 // ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
@@ -19,7 +30,6 @@ function likes(names) {
       } others like this`;
   }
 }
-console.log(likes([]));
 
 // Complete the square sum function so that it squares each number passed into it and then sums the results together.
 function squareSum(numbers) {
