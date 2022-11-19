@@ -1,16 +1,15 @@
 // You are provided with a list (or array) of integer pairs. Elements of each pair represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
 // Your task is to return number of people who are still in the bus after the last bus station (after the last array). Even though it is the last bus stop, the bus is not empty and some people are still in the bus, and they are probably sleeping there :D
+// number([[12, 0],[4, 7],[1, 4],[12, 12],]) --> should equal 6
 var number = function (busStops) {
   // Good Luck!
+  let passengerCount = 0;
+  for (stop of busStops) {
+    passengerCount += stop[0];
+    passengerCount -= stop[1];
+  }
+  return passengerCount;
 };
-console.log(
-  number([
-    [12, 0],
-    [4, 7],
-    [1, 4],
-    [6, 12],
-  ])
-); //should = 0
 
 // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
 function XO(str) {
