@@ -1,3 +1,16 @@
+// Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer).
+// cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200}); --> return 2
+// cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000}); --> return 3
+function cakes(recipe, available) {
+  return;
+}
+console.log(
+  cakes(
+    { flour: 500, sugar: 200, eggs: 1 },
+    { flour: 1200, sugar: 1200, eggs: 5, milk: 200 }
+  )
+); //should return 2
+
 // Write a function to square every digit of a number and concatenate them.
 // For example, if we run 9119 through the function, 811181 will come out, because 9^2 is 81 and 1^2 is 1.
 // Note: The function accepts an integer and returns an integer
