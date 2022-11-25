@@ -3,13 +3,11 @@ function cakes(recipe, available) {
   let possibilities = {};
   for (prop in recipe) {
     // does prop exist in available? if not, return 0.
-    console.log(prop);
-    console.log(available[prop]);
     if (!available[prop]) {
       return 0;
     }
+    // otherwise, divide available[prop] by recipe[prop] and store in new object
     possibilities[prop] = Math.floor(available[prop] / recipe[prop]);
-    // if so, divide available.prop by recipe.prop and store in new object
   }
   return possibilities;
 }
