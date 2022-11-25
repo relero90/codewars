@@ -1,15 +1,30 @@
 // Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer).
-// cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200}); --> return 2
-// cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000}); --> return 3
 function cakes(recipe, available) {
-  return;
+  let possibilities = {};
+  for (prop in recipe) {
+    // does prop exist in available? if not, return 0.
+    console.log(prop);
+    console.log(available[prop]);
+    if (!available[prop]) {
+      return 0;
+    }
+    possibilities[prop] = Math.floor(available[prop] / recipe[prop]);
+    // if so, divide available.prop by recipe.prop and store in new object
+  }
+  return possibilities;
 }
 console.log(
   cakes(
-    { flour: 500, sugar: 200, eggs: 1 },
-    { flour: 1200, sugar: 1200, eggs: 5, milk: 200 }
+    { flour: 500, sugar: 200, eggs: 1 }, //recipe
+    { flour: 1200, sugar: 1200, eggs: 5, milk: 200 } //available
   )
 ); //should return 2
+console.log(
+  cakes(
+    { apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100 }, //recipe
+    { sugar: 500, flour: 2000, milk: 2000 } //available
+  )
+); //should return 0
 
 // Write a function to square every digit of a number and concatenate them.
 // For example, if we run 9119 through the function, 811181 will come out, because 9^2 is 81 and 1^2 is 1.
