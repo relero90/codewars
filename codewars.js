@@ -1,18 +1,16 @@
 // Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer).
 function cakes(recipe, available) {
-  let possibilities = {};
+  let possibilities = [];
   for (prop in recipe) {
     // does prop exist in available? if not, return 0.
     if (!available[prop]) {
       return 0;
     }
-    // otherwise, divide available[prop] by recipe[prop] and store in new object
-    possibilities[prop] = Math.floor(available[prop] / recipe[prop]);
+    // otherwise, divide available[prop] by recipe[prop] and store value in empty array
+    possibilities.push(Math.floor(available[prop] / recipe[prop]));
   }
-
-  // iterate through possibilities object to find lowest value assigned to a prop
-  // return that value
-  return possibilities;
+  // return lowest value from array
+  return possibilities.sort()[0];
 }
 console.log(
   cakes(
