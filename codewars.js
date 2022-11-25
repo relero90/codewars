@@ -2,7 +2,11 @@
 // For example, if we run 9119 through the function, 811181 will come out, because 9^2 is 81 and 1^2 is 1.
 // Note: The function accepts an integer and returns an integer
 function squareDigits(num) {
-  return 0;
+  let digitsArray = num.toString().split("");
+  let squaresArray = digitsArray.map((digit) =>
+    Math.pow(parseInt(digit), 2).toString()
+  );
+  return parseInt(squaresArray.join(""));
 }
 
 // In this example you have to validate if a user input string is alphanumeric. The given string is not nil/null/NULL/None, so you don't have to check that.
