@@ -9,6 +9,9 @@ function cakes(recipe, available) {
     // otherwise, divide available[prop] by recipe[prop] and store in new object
     possibilities[prop] = Math.floor(available[prop] / recipe[prop]);
   }
+
+  // iterate through possibilities object to find lowest value assigned to a prop
+  // return that value
   return possibilities;
 }
 console.log(
