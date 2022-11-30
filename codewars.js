@@ -1,3 +1,12 @@
+// Your task is to write a function that takes a string and return a new string with all vowels removed.
+function disemvowel(str) {
+  return str
+    .split("")
+    .filter((char) => !char.match(/^[aeiouAEIOU]$/))
+    .join("");
+}
+console.log(disemvowel("Where in the world?"));
+
 // Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer).
 function cakes(recipe, available) {
   let possibilities = [];
