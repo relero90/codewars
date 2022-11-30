@@ -1,3 +1,18 @@
+// Complete the function/method so that it takes a PascalCase string and returns the string in snake_case notation. Lowercase characters can be numbers. If the method gets a number as input, it should return a string.
+function toUnderscore(string) {
+  if (typeof string === "number") {
+    return string.toString();
+  }
+  return string
+    .split(/(?=[A-Z])/)
+    .map((word) => word.toLowerCase())
+    .join("_");
+}
+console.log(toUnderscore("TestController")); // "test_controller"
+console.log(toUnderscore("MoviesAndBooks")); // "movies_and_books"
+console.log(toUnderscore("App7Test")); // "app7_test"
+console.log(toUnderscore(1)); // "1"
+
 // Your task is to write a function that takes a string and return a new string with all vowels removed.
 function disemvowel(str) {
   return str
@@ -5,7 +20,6 @@ function disemvowel(str) {
     .filter((char) => !char.match(/^[aeiouAEIOU]$/))
     .join("");
 }
-console.log(disemvowel("Where in the world?"));
 
 // Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer).
 function cakes(recipe, available) {
